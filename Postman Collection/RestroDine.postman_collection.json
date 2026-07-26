@@ -1,0 +1,1138 @@
+{
+  "info": {
+    "_postman_id": "556cfce0-6524-44e8-8db8-33e9c1e6155b",
+    "name": "RestroDine",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "50117323",
+    "_collection_link": "https://go.postman.co/collection/50117323-556cfce0-6524-44e8-8db8-33e9c1e6155b?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Orders",
+      "item": [
+        {
+          "name": "placeOrder",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"restaurantId\": 1,\r\n    \"itemName\": \"Chicken Biryani\",\r\n    \"price\": 250\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8082/orders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "orders"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "createOrder",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/orders?Authorization=Bearer ",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "orders"
+              ],
+              "query": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer "
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "newOrder",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0Y3VzdG9tZXIiLCJyb2xlIjoiQ3VzdG9tZXIiLCJpYXQiOjE3ODAyOTE1NjgsImV4cCI6MTc4MDM3Nzk2OH0.WY_LFt3C_ReGa5m6qPAzIQxPBErAV_8srwYF1bNfFWmReEJP2mTAjioSJa75XTcu",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"restaurantId\": 1,\r\n  \"itemName\": \"Chicken Biryani\",\r\n  \"price\": 250\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/orders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "orders"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "familyOrder",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0Y3VzdG9tZXIiLCJyb2xlIjoiQ3VzdG9tZXIiLCJpYXQiOjE3ODAyOTE1NjgsImV4cCI6MTc4MDM3Nzk2OH0.WY_LFt3C_ReGa5m6qPAzIQxPBErAV_8srwYF1bNfFWmReEJP2mTAjioSJa75XTcu",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"restaurantId\": 3,\r\n    \"itemName\": \"Jumbo Biryani\",\r\n    \"price\": 450\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/orders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "orders"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "dualCombo",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJ0ZXN0Y3VzdG9tZXIiLCJyb2xlIjoiQ3VzdG9tZXIiLCJpYXQiOjE3ODAyOTE1NjgsImV4cCI6MTc4MDM3Nzk2OH0.WY_LFt3C_ReGa5m6qPAzIQxPBErAV_8srwYF1bNfFWmReEJP2mTAjioSJa75XTcu",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"restaurantId\": 1,\r\n  \"itemName\": \"Biryani\",\r\n  \"price\": 250\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/orders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "orders"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "restraurants",
+      "item": [
+        {
+          "name": "createRestaurant",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\":\"Meridian\",\r\n  \"location\":\"Hyderabad\",\r\n  \"cuisineType\":\"Biryani\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8081/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getById",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/restaurants/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "restaurants",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "notifications",
+      "item": [
+        {
+          "name": "sendNotification",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\":\"arun@gmail.com\",\r\n  \"message\":\"Your order has been placed successfully\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8083/notifications",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8083",
+              "path": [
+                "notifications"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Inventory",
+      "item": [
+        {
+          "name": "addInventory",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"itemName\": \"Chicken Biryani\",\r\n    \"quantity\": 10\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8084/inventory",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8084",
+              "path": [
+                "inventory"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "reduceStock",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8084/inventory?itemName=Chicken%20Biryani&quantity=2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8084",
+              "path": [
+                "inventory"
+              ],
+              "query": [
+                {
+                  "key": "itemName",
+                  "value": "Chicken%20Biryani"
+                },
+                {
+                  "key": "quantity",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "deliveries",
+      "item": [
+        {
+          "name": "assignDelivery",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"orderId\": 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8084/deliveries",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8084",
+              "path": [
+                "deliveries"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "updateDeliveryStatus",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8084/deliveries/1?status=ON_THE_WAY",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8084",
+              "path": [
+                "deliveries",
+                "1"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "ON_THE_WAY"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "userLogDetails",
+      "item": [
+        {
+          "name": "addUser",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"arun\",\r\n    \"password\": \"1234\",\r\n    \"role\": \"ADMIN\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8085/auth/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8085",
+              "path": [
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "LoginTest",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8085/auth/login?username=arun&password=1234",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8085",
+              "path": [
+                "auth",
+                "login"
+              ],
+              "query": [
+                {
+                  "key": "username",
+                  "value": "arun"
+                },
+                {
+                  "key": "password",
+                  "value": "1234"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "api-gateway",
+      "item": [
+        {
+          "name": "getAllRestros",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/restaurants",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "restaurants"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "getAllOrders",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/orders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "orders"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "JWTtesting",
+      "item": [
+        {
+          "name": "Request WITHOUT JWT",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/restaurants",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "restaurants"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login and Get JWT",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/auth/login?username=arun&password=1234",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "auth",
+                "login"
+              ],
+              "query": [
+                {
+                  "key": "username",
+                  "value": "arun"
+                },
+                {
+                  "key": "password",
+                  "value": "1234"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Validate Token",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/auth/validate?token=eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhcnVuIiwiaWF0IjoxNzgwMDM3MDkzLCJleHAiOjE3ODAxMjM0OTN9.bZFjCzBUNwQ1yqpF9lOY_qwqYbcyem8e8LouM3hYMfty-jt4Ulc1flBvuoEyENnd",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "auth",
+                "validate"
+              ],
+              "query": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhcnVuIiwiaWF0IjoxNzgwMDM3MDkzLCJleHAiOjE3ODAxMjM0OTN9.bZFjCzBUNwQ1yqpF9lOY_qwqYbcyem8e8LouM3hYMfty-jt4Ulc1flBvuoEyENnd"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Without JWT",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/restaurants",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "restaurants"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "With JWT",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhcnVuIiwiaWF0IjoxNzgwMDM3MDkzLCJleHAiOjE3ODAxMjM0OTN9.bZFjCzBUNwQ1yqpF9lOY_qwqYbcyem8e8LouM3hYMfty-jt4Ulc1flBvuoEyENnd",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/restaurants",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "restaurants"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "User Registration",
+      "item": [
+        {
+          "name": "Register User",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"arun\",\r\n    \"password\": \"1234\",\r\n    \"role\": \"ADMIN\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/auth/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/auth/login?username=arun&password=1234",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "auth",
+                "login"
+              ],
+              "query": [
+                {
+                  "key": "username",
+                  "value": "arun"
+                },
+                {
+                  "key": "password",
+                  "value": "1234"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Admin_Praneeth_Registration_1",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"Praneeth Gattu\",\r\n    \"password\": \"9999\",\r\n    \"role\": \"Customer\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/auth/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Customer Reg",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJQcmFuZWV0aCIsInJvbGUiOiJDdXN0b21lciIsImlhdCI6MTc4MDA0NDIxMCwiZXhwIjoxNzgwMTMwNjEwfQ.tB3PF_HtM1Aqi6J8b5etqJGkKkErPnzWsJBfQ6S8zKSix5T2negGEayPxWApHri9",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"restaurantId\": 1,\r\n  \"itemName\": \"Chicken Biryani\",\r\n  \"price\": 250\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/auth/login?username=praneeth&password=9090",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "auth",
+                "login"
+              ],
+              "query": [
+                {
+                  "key": "username",
+                  "value": "praneeth"
+                },
+                {
+                  "key": "password",
+                  "value": "9090"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delivery Agent",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"Narasimha\",\r\n    \"password\": \"8080\",\r\n    \"role\": \"Delivery Agent\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/auth/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Roles Testing",
+      "item": [
+        {
+          "name": "Admin",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/auth/login?username=arun&password=1234",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "auth",
+                "login"
+              ],
+              "query": [
+                {
+                  "key": "username",
+                  "value": "arun"
+                },
+                {
+                  "key": "password",
+                  "value": "1234"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delivery Agent",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/auth/login?username=narasimha&password=8080",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "auth",
+                "login"
+              ],
+              "query": [
+                {
+                  "key": "username",
+                  "value": "narasimha"
+                },
+                {
+                  "key": "password",
+                  "value": "8080"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Customer",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/auth/login?username=praneeth&password=9090",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "auth",
+                "login"
+              ],
+              "query": [
+                {
+                  "key": "username",
+                  "value": "praneeth"
+                },
+                {
+                  "key": "password",
+                  "value": "9090"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "RBAC Access",
+      "item": [
+        {
+          "name": "Admin Access",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhcnVuIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzgwMDQ0MDEzLCJleHAiOjE3ODAxMzA0MTN9.pDGYMOYoAjCogwV9r2MvHxobEmJ44Vx8ksFLnQ-Jp2eP37WayhMc2QOnbabZzl2B",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/restaurants?Authorization=Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhcnVuIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzgwMDQ0MDEzLCJleHAiOjE3ODAxMzA0MTN9.pDGYMOYoAjCogwV9r2MvHxobEmJ44Vx8ksFLnQ-Jp2eP37WayhMc2QOnbabZzl2B",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "restaurants"
+              ],
+              "query": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhcnVuIiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzgwMDQ0MDEzLCJleHAiOjE3ODAxMzA0MTN9.pDGYMOYoAjCogwV9r2MvHxobEmJ44Vx8ksFLnQ-Jp2eP37WayhMc2QOnbabZzl2B"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Customer Access",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJQcmFuZWV0aCIsInJvbGUiOiJDdXN0b21lciIsImlhdCI6MTc4MDA0NDIxMCwiZXhwIjoxNzgwMTMwNjEwfQ.tB3PF_HtM1Aqi6J8b5etqJGkKkErPnzWsJBfQ6S8zKSix5T2negGEayPxWApHri9",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/orders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "orders"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Registrations",
+      "item": [
+        {
+          "name": "Customer",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"testcustomer\",\r\n    \"password\": \"9090\",\r\n    \"role\": \"Customer\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/auth/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Admin",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"testaadmin\",\r\n    \"password\": \"7860\",\r\n    \"role\": \"Admin\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/auth/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "CustomerLogin",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8085/auth/login?username=testadmin&password=7860",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8085",
+              "path": [
+                "auth",
+                "login"
+              ],
+              "query": [
+                {
+                  "key": "username",
+                  "value": "testadmin"
+                },
+                {
+                  "key": "password",
+                  "value": "7860"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "AdminLogin",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8085/auth/login?username=testaadmin&password=7860",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8085",
+              "path": [
+                "auth",
+                "login"
+              ],
+              "query": [
+                {
+                  "key": "username",
+                  "value": "testaadmin"
+                },
+                {
+                  "key": "password",
+                  "value": "7860"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Exceptions",
+      "item": [
+        {
+          "name": "Invalid Restro Id",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJQcmFuZWV0aCIsInJvbGUiOiJDdXN0b21lciIsImlhdCI6MTc4MDQ2OTM2MiwiZXhwIjoxNzgwNTU1NzYyfQ.k3Yb3jo6V66BeKm2OiJDJbPOa-a75B1sKcIatCFJG8am6ViBJiVS2EB6GEax-iIF",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"restaurantId\": 999,\r\n    \"itemName\": \"Biryani\",\r\n    \"price\": 250\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/orders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "orders"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Access Invalid Restro Id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/restaurants/999",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8081",
+              "path": [
+                "restaurants",
+                "999"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
