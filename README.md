@@ -2,279 +2,221 @@
 
 A scalable Restaurant Ordering System built using Java, Spring Boot, Spring Cloud, Apache Kafka, JWT Authentication, Eureka Service Discovery, API Gateway, and MySQL. The project demonstrates modern Microservices Architecture with both synchronous and asynchronous communication.
 
----
-
 ## 🚀 Features
 
-* User Registration & Login
-* JWT Authentication & Authorization
-* Role-Based Access Control (RBAC)
-* Restaurant Management
-* Order Management
-* Inventory Management
-* API Gateway Routing
-* Service Discovery using Eureka
-* Inter-Service Communication using OpenFeign
-* Event-Driven Architecture using Apache Kafka
-* Global Exception Handling
-* MySQL Database Integration
-* RESTful API Development
-* Postman Collection for API Testing
+### Customer
+- User Registration
+- Login using JWT Authentication
+- View Restaurants
+- Place Food Orders
+- Track Orders
+
+### Admin
+- Manage Restaurants
+- Manage Inventory
+- View Orders
+- Manage Delivery
+
+### System
+- API Gateway
+- Service Discovery (Eureka)
+- Kafka Event Communication
+- JWT Authentication
+- Microservices Architecture
 
 ---
 
-## 🏗️ Microservices
+## 🛠 Tech Stack
 
-### 1. Auth Service
-
-* User Registration
-* User Login
-* JWT Token Generation
-* Token Validation
-* Role-Based Authentication
-
-### 2. Restaurant Service
-
-* Add Restaurant
-* View Restaurants
-* Get Restaurant by ID
-* Custom Exception Handling
-
-### 3. Order Service
-
-* Place Order
-* Validate Restaurant via OpenFeign
-* Publish Kafka Events
-* Global Exception Handling
-
-### 4. Inventory Service
-
-* Consume Order Events
-* Update Inventory Automatically
-* Kafka Consumer Implementation
-
-### 5. API Gateway
-
-* Centralized Routing
-* JWT Validation
-* Request Filtering
-
-### 6. Eureka Discovery Server
-
-* Service Registration
-* Service Discovery
-
-### 7. Notification Service
-
-* Notification Service Structure
-
-### 8. Delivery Service
-
-* Delivery Service Structure
-
----
-
-## 🔄 Architecture
-
-```text
-Client
-   │
-   ▼
-API Gateway
-   │
-   ├── Auth Service
-   ├── Restaurant Service
-   ├── Order Service
-   │       │
-   │       ▼
-   │   Kafka Topic
-   │       │
-   │       ▼
-   └── Inventory Service
-
-Eureka Server
-   │
-   └── Service Discovery
-```
-
----
-
-## 🛠️ Tech Stack
+### Frontend
+- React
+- React Router
+- Axios
+- Vite
 
 ### Backend
+- Spring Boot
+- Spring Security
+- Spring Cloud Gateway
+- Eureka Discovery Server
+- Spring Data JPA
+- Hibernate
+- MySQL
+- Kafka
+- OpenFeign
 
-* Java 21
-* Spring Boot
-* Spring MVC
-* Spring Security
-* Spring Data JPA
-
-### Microservices
-
-* Spring Cloud
-* Eureka Server
-* OpenFeign
-* API Gateway
-
-### Security
-
-* JWT Authentication
-* Role-Based Access Control (RBAC)
-
-### Messaging
-
-* Apache Kafka
-* Kafka Producer
-* Kafka Consumer
-
-### Database
-
-* MySQL
-
-### Build Tool
-
-* Maven
-
-### Testing
-
-* Postman
-
-### Containerization
-
-* Docker
-* Docker Compose
-
-### Version Control
-
-* Git
-* GitHub
-
-### IDE
-
-* Eclipse IDE
+### DevOps
+- Git
+- GitHub
+- GitHub Actions
+- Vercel
 
 ---
 
-## 📂 Project Structure
+## 📁 Project Structure
 
-```text
-RestroDine
-│
+```
+RestroDine-System
+
 ├── api-gateway
 ├── auth-service
 ├── restaurant-service
 ├── order-service
 ├── inventory-service
-├── notification-service
 ├── delivery-service
+├── notification-service
 ├── discovery-server
 ├── kafka
-├── Postman Collection
+├── restrodine-frontend
 └── README.md
+```
+
+---
+
+## 🏗 Architecture
+
+```
+                React Frontend
+                      │
+                      ▼
+              API Gateway
+                      │
+        ┌─────────────┼─────────────┐
+        ▼             ▼             ▼
+ Auth Service   Restaurant Service  Order Service
+                      │
+                      ▼
+              Inventory Service
+
+                      ▼
+              Delivery Service
+
+                      ▼
+           Notification Service
+
+                      │
+                 Eureka Server
 ```
 
 ---
 
 ## 🔐 Authentication
 
-The application uses JWT-based authentication.
+- JWT Authentication
+- Role Based Authorization
 
-### Roles
+Roles
 
-* ADMIN
-* CUSTOMER
-* DELIVERY_AGENT
-
-### Authorization Header
-
-```http
-Authorization: Bearer <JWT_TOKEN>
-```
+- ADMIN
+- CUSTOMER
+- DELIVERY_AGENT
 
 ---
 
-## 📡 Kafka Event Flow
+## 📦 Microservices
 
-```text
-Order Service
-      │
-      ▼
-order-created
-      │
-      ▼
-Inventory Service
-      │
-      ▼
-Inventory Updated
-```
+### API Gateway
+
+Handles routing and security.
+
+### Discovery Server
+
+Service Registration and Discovery.
+
+### Auth Service
+
+Registration
+
+Login
+
+JWT Token Generation
+
+### Restaurant Service
+
+Restaurant CRUD
+
+Restaurant Listing
+
+### Order Service
+
+Place Orders
+
+Order History
+
+### Inventory Service
+
+Inventory Management
+
+### Delivery Service
+
+Delivery Tracking
+
+### Notification Service
+
+Order Notifications
 
 ---
 
-## 📮 API Testing
-
-A Postman Collection is included in the repository for testing all APIs.
-
-Features Covered:
-
-* User Registration
-* User Login
-* Restaurant APIs
-* Order APIs
-* Inventory APIs
-* JWT Authentication
-* API Gateway Routes
-
----
-
-## ⚙️ Setup Instructions
+## ⚙️ Installation
 
 ### Clone Repository
 
 ```bash
-git clone https://github.com/<your-username>/restaurant-ordering-microservices-platform.git
+git clone https://github.com/arundurgam/RestroDine-System.git
 ```
 
-### Start Kafka
+### Backend
 
 ```bash
-docker compose up -d
+cd auth-service
+mvn spring-boot:run
 ```
 
-### Start Services
+Run remaining services similarly.
 
-1. Eureka Discovery Server
-2. API Gateway
-3. Auth Service
-4. Restaurant Service
-5. Order Service
-6. Inventory Service
-7. Notification Service
-8. Delivery Service
+### Frontend
+
+```bash
+cd restrodine-frontend
+
+npm install
+
+npm run dev
+```
+
+---
+
+## 🔄 CI/CD
+
+GitHub Actions is configured to
+
+- Checkout Repository
+- Build Spring Boot Services
+- Build React Application
+
+Workflow file
+
+```
+.github/workflows/ci.yml
+```
+
+Every push to the main branch automatically triggers the build.
 
 ---
 
-## 📈 Key Concepts Implemented
+## ☁ Deployment
 
-* Microservices Architecture
-* Service Discovery
-* API Gateway Pattern
-* Event-Driven Architecture
-* JWT Authentication
-* Role-Based Authorization
-* Exception Handling
-* OpenFeign Communication
-* Kafka Messaging
-* Database Integration
-* REST API Development
+Frontend
 
----
+Deployed using Vercel.
+
+Backend
+
+Spring Boot Microservices (ready for deployment to Java hosting platforms such as Render, Railway, AWS, or Azure).
 
 ## 👨‍💻 Author
 **Durgam Arun**
-* Java Backend Developer
-* Spring Boot Developer
-* Microservices Enthusiast
 
+**GitHub: https://github.com/arundurgam
 LinkedIn: https://www.linkedin.com/in/durgam-arun/
-
-GitHub: Add Your GitHub Profile URL
+Live Application (Vercel): https://vercel.com/durgam-aruns-projects/restro-dine-system**
